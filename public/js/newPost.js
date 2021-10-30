@@ -1,8 +1,8 @@
 const newPostHandler = async function(event) {
     event.preventDefault();
   
-    const title = $('.post-title').val();
-    const body = $r('.post-text').val();
+    const title = $('#posttitle').val();
+    const body = $r('#postbody').val();
   
     await fetch(`/api/post`, {
       method: 'POST',
@@ -17,5 +17,5 @@ const newPostHandler = async function(event) {
   };
   
   document
-    $('#newPostForm').on('submit', newPostHandler);
+    $('.commentbutton').on('click', newPostHandler);
   
