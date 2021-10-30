@@ -8,8 +8,7 @@
             </h5>
             <h6 class="card-subtitle mb-2 text-muted">by:{{User.username}} on {{format_date createdAt}}</h6>
             <p class="card-text">{{body}}</p>
-            <button class="updateButton">Update Post</button>
-            <button class="deleteButton">Delete Post</button>
+            <button class="updateButton">Edit Post</button>
 
         </div>
     </div>
@@ -24,7 +23,7 @@
                 <button class="commentButton">Add New Post</button>
             </h5>
             <form style="display: none;">
-                <input type="number" value={{user.id}} />
+                <input type="hidden" value={{user.id}} />
                 <br>
                 <label for="posttitle">Post Title</label>
                 <input type="text" id="posttitle" placeholder="Insert Techy Title" />
