@@ -13,16 +13,17 @@ const hbs = exphbs.create({helpers});
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const myStore =  new SequelizeStore({
+  db: sequelize,
+})
 const sess = {
   secret: 'Super secret secret',
-  cookie: {maxAge: 36000 },
+  cookie: {maxAge: 36000, },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  }),
+  store:myStore,
 };
-
+myStore.sync();
 app.use(session(sess));
 
 //Express.js handlebar connection
