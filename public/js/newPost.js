@@ -16,6 +16,11 @@ const newPostHandler = async function(event) {
     document.location.replace('/dashboard');
   };
   
+  const switchToEdit = async function () {
+    document.location.replace('/editPost')
+  }
+  
   document
     $('.commentbutton').on('click', newPostHandler);
+    $('.updateButton').on('click',switchToEdit);
   
