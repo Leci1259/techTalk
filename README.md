@@ -47,7 +47,7 @@ Personal use
 
 ## Application
 
-[Depolyed Application](https://github.com/Leci1259/tech_blog/blob/main/public/img/Screenshot%202021-11-01%20190253.png)
+![Deployed Application](https://github.com/Leci1259/tech_blog/blob/main/public/img/Screenshot%202021-11-01%20190253.png)
 [Screenshot]()
 
 ## Contribution
