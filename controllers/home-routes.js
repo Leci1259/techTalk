@@ -6,15 +6,15 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: User,
+      include: User, Comment
     });
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', 
-    { 
-      posts,
-    });
+    res.render('homepage',
+      {
+        posts,
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -45,12 +45,12 @@ router.get('/post/:id', async (req, res) => {
 });
 
 // Dashboard Route
-router.get('/dashboard',withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    
+
     // Pass serialized data and session flag into template
-    res.render('dashboard', { 
-      
+    res.render('dashboard', {
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -60,7 +60,7 @@ router.get('/dashboard',withAuth, async (req, res) => {
 // Login Page Route
 router.get('/login', async (req, res) => {
   try {
-    if( req.session.loggedIn) {
+    if (req.session.loggedIn) {
       res.redirect('/dashboard')
       return;
     }

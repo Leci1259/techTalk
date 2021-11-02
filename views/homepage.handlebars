@@ -1,15 +1,23 @@
-<section class="posts container d-flex row flex-wrap justify-content-around">
+<section class="postContainer d-flex row flex-wrap justify-content-around">
     {{#each posts as |post| }}
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">
                 <a href="/post/{{id}}">{{title }}</a>
+
             </h5>
-            <h6 class="card-subtitle mb-2 text-muted">by:{{User.username}}
+            <h6 class="card-subtitle mb-2 text-muted"><span>{{id}}</span>
+                <br> by:{{User.username}} </span>
                 <br> on {{format_date createdAt}}
             </h6>
             <p class="card-text">{{body}}</p>
+            {{#if Comment}}
+            <div class='commentBox'>
+                <p>comment by {{User.username}} on {{format_date createdAt}}</p>
+                <p> {{Comment.body}}</p>
+            </div>
+            <textarea></textarea>
             <button class="commentButton">Comment</button>
         </div>
     </div>

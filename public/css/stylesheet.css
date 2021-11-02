@@ -118,7 +118,7 @@ h1 {
   position: relative;
   border-radius: 50%;
   background-size: contain;
-  background-image: url(../img/userIcon.png);
+  /*background-image: url(../img/userIcon.png);*/
 }
 .user-icon-signup {
   width: 100px;
@@ -126,7 +126,7 @@ h1 {
   position: relative;
   border-radius: 50%;
   background-size: contain;
-  background-image: url(../img/signupIcon.jpg);
+  /*background-image: url(../img/signupIcon.jpg);*/
 }
 
 .user-name {
@@ -176,4 +176,15 @@ input.user-password {
   text-shadow: 0 0 25px #042c71;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+textarea {
+  border-color: #042c71;
+  border-width: 2%;
+  color: #042c71;
+}
+
+.commentBox {
+  background-color: #042c71;
+  color: white;
 }
