@@ -6,7 +6,11 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: User, Comment
+      include: [User, {
+        model: Comment,
+        include: [User],
+      }
+      ]
     });
     const posts = postData.map((post) => post.get({ plain: true }));
 
@@ -47,10 +51,17 @@ router.get('/post/:id', async (req, res) => {
 // Dashboard Route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+    const postData = Post.findAll({
+      where: { user_id: req.session.user_id },
+      include: [User, {
+        model: Comment,
+        include: [User],
+      }]
+    })
 
     // Pass serialized data and session flag into template
     res.render('dashboard', {
-
+      postData,
     });
   } catch (err) {
     res.status(500).json(err);
