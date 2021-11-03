@@ -12,20 +12,20 @@
                 <br> on {{format_date createdAt}}
             </h6>
             <p class="card-text">{{body}}</p>
-            {{#if post.Comments}}
+            {{#if post.Comment}}
             <section class="card commentcard text-center">
                 <div class="card-header">
                     <h6>Comments</h6>
                 </div>
 
                 <div class="card-body">
-                    {{#each post.Comments}}
+                    {{#each post.Comment as |Comment|}}
                     <div>
                         <p>
                             {{body}}
                         </p>
                         <p>
-                            {{User.username}}, {{format_date}}
+                            {{User.username}}, {{format_date createdAt}}
                         </p>
                     </div>
                     {{/each}}
