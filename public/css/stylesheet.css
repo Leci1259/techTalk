@@ -118,7 +118,7 @@ h1 {
   position: relative;
   border-radius: 50%;
   background-size: contain;
-  /*background-image: url(../img/userIcon.png);*/
+  background-image: url(../img/userIcon.png);
 }
 .user-icon-signup {
   width: 100px;
@@ -126,7 +126,7 @@ h1 {
   position: relative;
   border-radius: 50%;
   background-size: contain;
-  /*background-image: url(../img/signupIcon.jpg);*/
+  background-image: url(../img/signupIcon.jpg);
 }
 
 .user-name {

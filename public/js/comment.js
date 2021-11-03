@@ -22,6 +22,6 @@ const commentHandler = async function (event) {
 
 
 document
-    .querySelector('.postContainer')
-    .addEventListener('click', commentHandler);
+    .querySelector('.post-container')
+    .addEventListener('submit', commentHandler);
 //$('.postContainer').on('click', commentHandler);

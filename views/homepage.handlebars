@@ -1,4 +1,4 @@
-<section class="postContainer d-flex row flex-wrap justify-content-around">
+<section class="post-container d-flex row flex-wrap justify-content-around">
     {{#each posts as |post| }}
 
     <div class="card" style="width: 18rem;">
@@ -12,13 +12,40 @@
                 <br> on {{format_date createdAt}}
             </h6>
             <p class="card-text">{{body}}</p>
-            {{#if Comment}}
-            <div class='commentBox'>
-                <p>comment by {{User.username}} on {{format_date createdAt}}</p>
-                <p> {{Comment.body}}</p>
-            </div>
-            <textarea></textarea>
-            <button class="commentButton">Comment</button>
+            {{#if post.Comments}}
+            <section class="card commentcard text-center">
+                <div class="card-header">
+                    <h6>Comments</h6>
+                </div>
+
+                <div class="card-body">
+                    {{#each post.Comments}}
+                    <div>
+                        <p>
+                            {{body}}
+                        </p>
+                        <p>
+                            {{User.username}}, {{format_date}}
+                        </p>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/if}}
+            <form id="new-comment-form" class="card commentform text-center">
+
+                <p>Add New Comment</p>
+
+
+                <div class="card-body" style="width:auto">
+                    <input type="hidden" name="post-id" value="{{post.id}}" />
+
+                    <textarea name="comment-body" class="form-input" style="margin-left: -10%;"></textarea>
+
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+
         </div>
     </div>
     {{/each}}
